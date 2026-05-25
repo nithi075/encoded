@@ -1,7 +1,7 @@
 import "./index.css";
 import Hero from './components/Hero/Hero';
 import StorySection from "./components/StorySection/StorySection";
-import FilmSection from "./components/FilmSection/FlimSect
+import FilmSection from "./components/FilmSection/FlimSection";
 import "./App.css";
 
 import Packages from "./components/packages/Packages";   // NEW
