@@ -28,7 +28,7 @@ export default function Featured() {
 
   const handleInstagramRedirect = () => {
     window.open(
-      "https://www.instagram.com/goldenlights_photography/",
+      "https://www.instagram.com/wedding_by_.arun/",
       "_blank"
     );
   };

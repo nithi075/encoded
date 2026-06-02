@@ -30,12 +30,12 @@ const Gallery = () => {
 
       {/* Instagram Link */}
       <a
-        href="https://www.instagram.com/devstudioz_official/"
+        href="https://www.instagram.com/wedding_by_.arun/"
         target="_blank"
         rel="noopener noreferrer"
         className="insta-link"
       >
-        @devstudioz_official
+        @wedding_by_.arun
       </a>
 
       {/* Gallery Grid */}

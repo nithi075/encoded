@@ -25,18 +25,19 @@ const WeddingStory = () => {
           <img src={proposalImage} alt="Proposal" />
         </div>
 
-        <div className="story-content">
-          <span className="story-date">
-            JULY 14, 2025
-          </span>
+       <div className="story-content">
+  <span className="story-date">
+    BRIDAL PHOTOGRAPHY
+  </span>
 
-          <h3>THE PROPOSAL</h3>
+  <h3>TIMELESS BRIDAL ELEGANCE</h3>
 
-          <p>
-            Under the starlit sky of Tuscany, where the silence was broken only
-            by our whispers. It wasn't just a question; it was the start of our forever.
-          </p>
-        </div>
+  <p>
+    Every smile, every glance, and every beautiful detail is captured with care,
+    preserving the grace, confidence, and beauty of your special day in timeless photographs
+    that you'll cherish forever.
+  </p>
+</div>
 
       </motion.div>
 

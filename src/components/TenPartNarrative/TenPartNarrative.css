@@ -232,3 +232,19 @@
     bottom: 55px;
   }
 }
+@media (max-width: 768px) {
+
+
+ 
+
+  .narrative-grid {
+    max-width: 100%;
+    grid-template-columns: 38% 29% 29%;
+    grid-template-rows: 160px 160px 160px;
+    gap: 8px;
+  }
+
+ 
+
+
+}

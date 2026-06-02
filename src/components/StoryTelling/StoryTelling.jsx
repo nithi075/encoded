@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./Storytelling.css";
+import "./StoryTelling.css";
 
 // Import your images
 import maternityMain from "../../assets/img1.jpg";
@@ -22,11 +22,11 @@ const photographyData = [
 {
   id: 2,
 
-  mini: "Pre Wedding Shoot",
+  mini: "Model Shoot",
 
-  title: "BEFORE THE FOREVER",
+  title: "ELEGANCE IN EVERY FRAME",
 
-  desc: "Every glance, every laugh, and every stolen moment before the wedding day is captured beautifully, turning your love story into timeless memories filled with romance and emotion.",
+  desc: "Capturing confidence, style, and personality through stunning model photography. Every pose, expression, and detail is carefully crafted to create striking visuals that showcase beauty, fashion, and individuality with a luxurious editorial touch.",
 
   imageMain: newbornMain,
   imageFloat: newbornFloat,
