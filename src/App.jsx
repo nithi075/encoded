@@ -3,7 +3,7 @@ import Hero from './components/Hero/Hero';
 import StorySection from "./components/StorySection/StorySection";
 import FilmSection from "./components/FilmSection/FlimSection";
 import About from "./components/About/About";
-import Testimonials from "./components/Testimonials/Testimonials";
+import Testimonials from "./components/testimonials/Testimonials";
 import Gallery from "./components/Gallery/Gallery";
 import Footer from "./components/footer/footer";
 import Navbar from "./components/Navbar/Navbar";
