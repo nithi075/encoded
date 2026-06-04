@@ -32,7 +32,7 @@ const Hero = () => {
         </p>
 
         <h1 className="hero-title">
-          WEDDING BY ARUN
+          MAGIC MOMENTZ PHOTOGRAPHY
         </h1>
       </motion.div>
 

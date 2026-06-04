@@ -26,7 +26,7 @@ const StorySection = () => {
           </div>
 
           <h3>Ragapriya & Madhanmohan</h3>
-          <p className="location">Trichy ,Tamilnadu</p>
+          <p className="location">Nagercoil ,Tamilnadu</p>
         </motion.div>
 
         {/* Second Story */}
@@ -41,7 +41,7 @@ const StorySection = () => {
           </div>
 
           <h3>Akash & Anbu</h3>
-          <p className="location">Trichy, Tamilnadu</p>
+          <p className="location">Nagercoil, Tamilnadu</p>
         </motion.div>
 
       </div>

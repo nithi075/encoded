@@ -26,17 +26,17 @@ const WeddingStory = () => {
         </div>
 
        <div className="story-content">
-  <span className="story-date">
-    BRIDAL PHOTOGRAPHY
-  </span>
+ <span className="story-date">
+  WEDDING PHOTOGRAPHY
+</span>
 
-  <h3>TIMELESS BRIDAL ELEGANCE</h3>
+<h3>CAPTURING YOUR LOVE STORY</h3>
 
-  <p>
-    Every smile, every glance, and every beautiful detail is captured with care,
-    preserving the grace, confidence, and beauty of your special day in timeless photographs
-    that you'll cherish forever.
-  </p>
+<p>
+  From heartfelt vows to joyful celebrations, every precious moment of your wedding day
+  is captured with passion and creativity. We preserve the emotions, traditions, and
+  beautiful memories that make your special day unforgettable for generations to come.
+</p>
 </div>
 
       </motion.div>

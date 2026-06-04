@@ -22,11 +22,11 @@ const photographyData = [
 {
   id: 2,
 
-  mini: "Model Shoot",
+  mini: "Pre Wedding Shoot",
 
-  title: "ELEGANCE IN EVERY FRAME",
+title: "A LOVE STORY IN EVERY FRAME",
 
-  desc: "Capturing confidence, style, and personality through stunning model photography. Every pose, expression, and detail is carefully crafted to create striking visuals that showcase beauty, fashion, and individuality with a luxurious editorial touch.",
+desc: "Capturing the romance, chemistry, and beautiful journey of two hearts before their big day. Every smile, glance, and candid moment is thoughtfully preserved to create timeless photographs that reflect your unique love story with elegance and emotion.",
 
   imageMain: newbornMain,
   imageFloat: newbornFloat,

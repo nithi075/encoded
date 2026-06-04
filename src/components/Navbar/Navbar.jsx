@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="nav-logo">WEDDING BY ARUN</div>
+      <div className="nav-logo">MAGIC MOMENTZ</div>
       
       {/* Hamburger Icon */}
       <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
