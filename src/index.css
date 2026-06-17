@@ -1,163 +1,207 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400&display=swap');
+/* ============================================================
+   index.css
+   BRICK Socials — Premium Black & White Design System
+   Fonts  : Inter (body) · Syne (display) — same scale as original
+   Colors : Pure monochrome, zero color allowed
+   ============================================================ */
 
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Syne:wght@400;500;600;700;800&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS — Monochrome Palette
+   ============================================================ */
 :root {
-  /* Colors - Luxury Palette */
-  --bg-color: #f8f6f2;
-  --text-dark: #1a1a1a;
-  --accent-gold: #c6a77d;
-  --text-muted: #7d746b;
+  /* ── Backgrounds ── */
+  --bg-primary:     #000000;   /* page base */
+  --bg-secondary:   #0A0A0A;   /* alternate sections */
+  --bg-card:        #111111;   /* cards */
+  --bg-elevated:    #161616;   /* elevated surfaces / inputs */
+  --bg-tag:         #111111;   /* service tags */
 
-  /* Typography Variables */
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-sans: 'Manrope', sans-serif;
-  
-  /* Spacing Variables */
-  --section-padding: clamp(60px, 8vw, 120px) 6%;
+  /* ── Text ── */
+  --txt-primary:    #FFFFFF;
+  --txt-secondary:  #CFCFCF;
+  --txt-muted:      #8A8A8A;
+  --txt-dim:        #555555;
+
+  /* ── Borders ── */
+  --border:         #2A2A2A;
+  --border-hover:   #4A4A4A;
+  --border-subtle:  rgba(255,255,255,0.05);
+
+  /* ── Glow / White light effects ── */
+  --glow-soft:      rgba(255,255,255,0.08);
+  --glow-medium:    rgba(255,255,255,0.12);
+  --glow-strong:    rgba(255,255,255,0.15);
+  --glow-hero:      rgba(255,255,255,0.04);
+
+  /* ── Button — Primary (White filled) ── */
+  --btn-primary-bg:      #FFFFFF;
+  --btn-primary-txt:     #000000;
+  --btn-primary-hover-bg:#E8E8E8;
+
+  /* ── Button — Secondary (Ghost) ── */
+  --btn-secondary-bg:       transparent;
+  --btn-secondary-txt:      #FFFFFF;
+  --btn-secondary-border:   #FFFFFF;
+  --btn-secondary-hover-bg: #FFFFFF;
+  --btn-secondary-hover-txt:#000000;
+
+  /* ── Typography scale (identical to original) ── */
+  --font-display: 'Syne',  sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* ── Spacing (identical to original) ── */
+  --sp-4:    4px;
+  --sp-8:    8px;
+  --sp-12:  12px;
+  --sp-16:  16px;
+  --sp-20:  20px;
+  --sp-24:  24px;
+  --sp-32:  32px;
+  --sp-40:  40px;
+  --sp-48:  48px;
+  --sp-56:  56px;
+  --sp-64:  64px;
+  --sp-80:  80px;
+  --sp-100:100px;
+  --sp-120:120px;
+
+  /* ── Container ── */
+  --container-max: 1280px;
+  --container-pad: 48px;
+
+  /* ── Radius ── */
+  --r-sm:    6px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-xl:   32px;
+  --r-full:9999px;
+
+  /* ── Transitions ── */
+  --t-fast:   0.18s ease;
+  --t-mid:    0.28s ease;
+  --t-slow:   0.45s ease;
+
+  /* ── Navbar height ── */
+  --navbar-h: 72px;
 }
 
-/* Base Reset */
-* {
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
 body {
-  background-color: var(--bg-color);
-  color: var(--text-dark);
-  font-family: var(--font-sans);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--txt-primary);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+a { color: inherit; text-decoration: none; }
+img, video { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.1; }
 
-/* Global Headings & Typography */
-h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  color: var(--text-dark);
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-/* ==================================================
-   GLOBAL SECTION COMPONENT CLASSES
-   Use these in every page section to avoid collapsing
-================================================== */
-
-.narrative-section {
-  padding: var(--section-padding);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.container {
   width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
 }
 
-.section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 0.05em;
-}
-
-.section-subtitle {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--text-muted);
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-/* Links & Buttons Reset */
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.3s ease;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-/* Utilities */
-.text-center { text-align: center; }
-.accent-color { color: var(--accent-gold); }
-/* ==================================================
-   MOBILE RESPONSIVE OVERRIDES
-================================================== */
-
-@media (max-width: 768px) {
-  /* Reduce padding for smaller screens to save space */
-  :root {
-    --section-padding: 60px 5%;
-  }
-
-  /* Adjust headings for mobile screens */
-  .section-title {
-    font-size: 1.8rem; /* Smaller, readable title */
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .section-subtitle {
-    font-size: 0.65rem; /* Smaller subtitle for mobile */
-    margin-bottom: 2rem;
-    letter-spacing: 0.2em;
-  }
-
-  /* Optional: Make body text slightly smaller on mobile */
-  body {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Extra small screens: Further tighten spacing */
-  .narrative-section {
-    padding: 40px 15px;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-}
-/* ==================================================
-   TYPOGRAPHY & BODY TEXT STYLING
-================================================== */
-
-p {
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem; /* Paragraphs overlap aagama irukka */
-  max-width: 700px;      /* Editorial width for better reading */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Specific Heading adjustments */
-h1 { font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 2rem; }
-h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
-h4 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; }
-
-/* Strong/Bold text styling for elegance */
-strong {
-  color: var(--text-dark);
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-8);
+  padding: 13px 26px;
+  border-radius: var(--r-full);
+  font-family: var(--font-body);
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--t-mid),
+    border-color var(--t-mid),
+    color var(--t-mid),
+    transform var(--t-fast),
+    box-shadow var(--t-mid);
 }
 
-/* Mobile Adjustments for Typography */
-@media (max-width: 768px) {
-  p {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 1.8rem; }
-  h3 { font-size: 1.4rem; }
+/* Primary — white fill, black text */
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-txt);
+  border: 1.5px solid var(--btn-primary-bg);
 }
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-bg);
+  transform: scale(1.03);
+  box-shadow: 0 0 30px var(--glow-medium);
+}
+.btn-primary:active { transform: scale(1.00); }
+
+/* Secondary — ghost white */
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-txt);
+  border: 1px solid var(--btn-secondary-border);
+}
+.btn-secondary:hover {
+  background-color: var(--btn-secondary-hover-bg);
+  color: var(--btn-secondary-hover-txt);
+  transform: scale(1.03);
+  box-shadow: 0 0 20px var(--glow-soft);
+}
+.btn-secondary:active { transform: scale(1.00); }
+
+/* ── Scroll-reveal base ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar               { width: 4px; }
+::-webkit-scrollbar-track         { background: #000; }
+::-webkit-scrollbar-thumb         { background: #333; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover   { background: #555; }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ── Container responsive padding ── */
+@media (max-width: 1024px) { :root { --container-pad: 32px; } }
+@media (max-width: 768px)  { :root { --container-pad: 20px; } }

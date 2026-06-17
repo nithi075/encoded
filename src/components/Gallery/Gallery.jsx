@@ -1,75 +1,81 @@
-import { motion } from 'framer-motion';
-import './Gallery.css';
+import useInView from '../useInView'
+import './Gallery.css'
 
-// Import your gallery images
-import gallery1 from '../../assets/gal1.jpg';
-import gallery2 from '../../assets/gal2.jpg';
-import gallery3 from '../../assets/gal3.jpg';
-import gallery4 from '../../assets/gal4.jpg';
-import gallery5 from '../../assets/gal5.jpg';
-import gallery6 from '../../assets/gal6.jpg';
+import img1 from '../../assests/img1.jpg'
+import img2 from '../../assests/img2.jpg'
+import img3 from '../../assests/img3.jpg'
+import img4 from '../../assests/img4.jpg'
 
-const Gallery = () => {
+import video1 from '../../assests/video1.mp4'
+import video2 from '../../assests/video2.mp4'
+import video3 from '../../assests/video3.mp4'
+import video4 from '../../assests/video4.mp4'
+import video5 from '../../assests/video5.mp4'
 
-  const images = [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery5,
-    gallery6,
-  ];
+const ITEMS = [
+  { type: 'video', src: video1, alt: 'Project Video 1', span: 'tall' },
+  { type: 'image', src: img1, alt: 'Project Image 1', span: 'normal' },
+  { type: 'image', src: img2, alt: 'Project Image 2', span: 'normal' },
+
+  { type: 'video', src: video3, alt: 'Project Video 3', span: 'normal' },
+  { type: 'image', src: img3, alt: 'Project Image 3', span: 'tall' },
+  { type: 'video', src: video4, alt: 'Project Video 4', span: 'wide' },
+  { type: 'image', src: img4, alt: 'Project Image 4', span: 'normal' },
+
+  { type: 'video', src: video5, alt: 'Project Video 5', span: 'tall' },
+]
+
+export default function Gallery() {
+  const [ref, inView] = useInView(0.05)
 
   return (
+    <section className="gallery section-border-top" id="gallery" ref={ref}>
+      <div className="container">
 
-    <section className="gallery-section">
+        <div className={`gallery__header reveal${inView ? ' in-view' : ''}`}>
+          <h2 className="gallery__title">Our Work 🎨</h2>
+          <p className="gallery__sub">
+            A glimpse of the content we've created for our clients across industries.
+          </p>
+        </div>
 
-      <h2 className="section-title">
-        VISUAL NARRATIVES
-      </h2>
+        <div
+          className={`gallery__grid reveal${inView ? ' in-view' : ''}`}
+          style={{ transitionDelay: '0.1s' }}
+        >
+          {ITEMS.map((item, i) => (
+            <div
+              key={i}
+              className={`gallery__cell gallery__cell--${item.span}`}
+              style={{
+                transitionDelay: inView ? `${i * 0.055}s` : '0s',
+              }}
+            >
+              {item.type === 'video' ? (
+                <video
+                  src={item.src}
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              ) : (
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                />
+              )}
 
-      {/* Instagram Link */}
-      <a
-        href="https://www.instagram.com/wedding_by_.arun/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="insta-link"
-      >
-        @wedding_by_.arun
-      </a>
-
-      {/* Gallery Grid */}
-      <div className="gallery-grid">
-
-        {images.map((img, i) => (
-
-          <motion.div
-            key={i}
-            className="gallery-item"
-
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-
-            transition={{
-              duration: 0.7,
-              delay: i * 0.1
-            }}
-
-            viewport={{ once: true }}
-          >
-
-            <div className="image-placeholder">
-              <img src={img} alt={`Gallery ${i + 1}`} />
+              <div className="gallery__overlay">
+                <span className="gallery__label">{item.alt}</span>
+              </div>
             </div>
-
-          </motion.div>
-
-        ))}
+          ))}
+        </div>
 
       </div>
-
     </section>
-  );
-};
-
-export default Gallery;
+  )
+}
