@@ -7,7 +7,7 @@
 // ============================================================
 import { useState } from 'react'
 import './footer.css'
-import logoimg from "../../assests/logo.png"
+import logoimg from "../../assests/logo.jpg"
 
 const LOGO      = logoimg
 const BRICK_ICO = 'https://cdn.prod.website-files.com/661fd630c0a9ac4bbd2a7878/661fd630c0a9ac4bbd2a7986_brick-icon_black.svg'
@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="footer__copy">© 2023 Crescends. All rights reserved.</p>
+          <p className="footer__copy">© 2023 Encoded. All rights reserved.</p>
 
           {/* Agency credit */}
           <div className="footer__credit">

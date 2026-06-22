@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import './Navbar.css'
-import logo from '../../assests/logo.png' // உங்கள் logo path
+import logo from '../../assests/logo.jpg' // உங்கள் logo path
 
 const NAV_LINKS = [
 { label: 'How we work', href: '#services' },

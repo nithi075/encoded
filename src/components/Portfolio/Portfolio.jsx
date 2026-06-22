@@ -71,7 +71,7 @@ export default function Portfolio() {
               href="https://brickagency.com/"
               className="btn btn-primary"
               target="_blank" rel="noopener noreferrer"
-            >Visit Crescends</a>
+            >Visit Encoded</a>
             <a
               href="https://brickagency.com/work/"
               className="btn btn-secondary"
